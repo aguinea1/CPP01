@@ -19,9 +19,8 @@ DEPDIR			= deps
 SRCS = main.cpp			\
 	   newZombie.cpp	\
 	   Zombie.cpp		\
-	   randomChump.cpp
-
-
+	   randomChump.cpp	\
+	   zombieHorde.cpp
 
 HEADERS = Zombie.hpp
 
