@@ -5,7 +5,7 @@
 NAME			= uV 
 
 CC				= c++
-CFLAGS			= -Wall -Wextra -Werror  -std=c++98 -fsanitize=address -MMD
+CFLAGS			= -Wall -Wextra -Werror  -std=c++98 -MMD
 DEPFLAGS		= -MMD -MF $(DEPDIR)/$*.d
 
 SRCDIR			= src

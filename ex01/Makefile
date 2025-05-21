@@ -2,10 +2,10 @@
 #                              CONFIGURATION                                   #
 ################################################################################
 
-NAME			= ZzZ
+NAME			= ZombII
 
 CC				= c++
-CFLAGS			= -Wall -Wextra -Werror  -std=c++98 -fsanitize=address -MMD
+CFLAGS			= -Wall -Wextra -Werror  -std=c++98 -MMD
 DEPFLAGS		= -MMD -MF $(DEPDIR)/$*.d
 
 SRCDIR			= src
@@ -17,9 +17,7 @@ DEPDIR			= deps
 ################################################################################
 
 SRCS = main.cpp			\
-	   newZombie.cpp	\
 	   Zombie.cpp		\
-	   randomChump.cpp	\
 	   zombieHorde.cpp
 
 HEADERS = Zombie.hpp

@@ -6,7 +6,7 @@
 /*   By: aguinea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:14:01 by aguinea           #+#    #+#             */
-/*   Updated: 2025/05/20 13:25:09 by aguinea          ###   ########.fr       */
+/*   Updated: 2025/05/21 15:19:35 by aguinea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void    Harl::complain(std::string level)
     int i = 0;
     int j = - 1;
 
-    std::string message[4] = {"DEBUG", "WARNING", "INFO", "ERROR"};
-
+    std::string message[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*functions[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     while (i < 4)
     {
         if (message[i] == level)
@@ -62,16 +62,16 @@ void    Harl::complain(std::string level)
     switch (j)
     {
 		case 0:
-			    Harl::debug();
+				(this->*functions[j])();
 				break;
 		case 1:
-				Harl::warning();
+				(this->*functions[j])();
 				break;
 		case 2:
-				Harl::info();
+				(this->*functions[j])();
 				break;
 		case 3:
-				Harl::error();
+				(this->*functions[j])();
 				break;
 		default:
 				std::cout << "there has been a problem\n";
